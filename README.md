@@ -6,5 +6,6 @@ Under Developemnet ..........
 
 For Testing Purposes:
 
-Email : test@gmail.com
-password : 123456789
+<strong>Email </strong: test@gmail.com
+</br>
+<strong>password</strong> : 123456789
