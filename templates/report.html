@@ -1,0 +1,345 @@
+{% extends 'base.html' %}
+{% block title %}
+Report Overview
+{% endblock %}
+{% block style %}
+    body{
+      padding-bottom=100px;
+    }
+    th{
+      height:50px;
+    }
+    tr#header{
+      background-color:#33cc00;
+    }
+    td:nth-child(even) {background-color:#bfff80 ;}
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+  text-align: center;
+}
+td.feedback{
+  background-color:#ffffcc;
+}
+table {
+  width: 100%;
+}
+{% endblock %}
+{% block content %}
+  <input type="hidden" id="actualDate" name="actualDate"/>
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url('police.png'); background-size: cover; background-position: center top;">
+    <!-- Mask -->
+    <span class="mask bg-gradient-default opacity-8"></span>
+    <!-- Header container -->
+    <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-7 col-md-10">
+          <h1 style="
+    color: white;
+    font-size: 70px;
+">Database Report </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="container-fluid mt--7" style="
+    margin-bottom: 100px;
+">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+          <div class="card card-profile shadow">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <a href="#">
+                    <img src="/static/media/police.jpg" class="rounded-circle">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+              <div class="d-flex justify-content-between">
+                <!-- <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
+                <a href="#" class="btn btn-sm btn-default float-right">Message</a> -->
+              </div>
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+              <div class="row">
+                <div class="col">
+                   <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                   </div> 
+                </div>
+              </div>
+              <div class="text-center">
+                <h3>
+                  Admin<span class="font-weight-light"></span>
+                </h3>
+                <div class="h5 font-weight-300">
+                  <i class="ni location_pin mr-2"></i>VADODARA
+                </div>
+                <div class="h5 mt-4">
+                  <i class="ni business_briefcase-24 mr-2"></i>GOVERNMENT OFFICER
+                </div>
+                <!-- <div>
+                  <i class="ni education_hat mr-2"></i>University of Computer Science
+                </div> -->
+                <hr class="my-4">
+                <!-- <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p> -->
+                <a href="#">Show more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">Select Details For QR Code</h3>
+                </div>
+                <div class="col-4 text-right">
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <form method="POST">
+                <h6 class="heading-small text-muted mb-4">Location Details</h6>
+                <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused" style="display:flex;flex-direction: column;">
+                        <label class="form-control-label" >Police Station by Police Station</label>
+<select name="sub_police" id="sub_police" class="form-control form-control-alternative">
+  <option>Select</option>
+  <option  value="Sayajigunj" >Sayajigunj</option>
+  <option   value="Amraiwadi">Amraiwadi</option>s
+  <option  value="Khatodara">Khatodara</option>
+  <option  value="Navrangpura">Navrangpura</option>
+  <option  value="Chhani">Chhani</option>
+  <option  value="Khatodara">Khatodara</option>
+  <option  value="Varachha">Varachha</option>
+  <option  value="Fatehgunj">Fatehgunj</option>
+    </select>
+  </div>
+    </div>
+    <div class="col-lg-6">
+                      <div class="form-group focused" style="display:flex;flex-direction: column;">
+                      <label for="sortdata">Sort For Police Station By Rating</label>
+                  <label for="default" class="radio-inline"
+                  required><input
+                      type="radio"
+                      name="sortdata"
+                      value="default"
+                      id="default"
+                      checked
+                      required
+                    />Default</label
+                  >
+                  <label for="ascending " class="radio-inline"
+                    ><input 
+                      type="radio"
+                      name="sortdata"
+                      value="ascending"
+                      id="ascending "
+                    />Ascending </label
+                  >
+                  <label for="descending" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="sortdata"
+                      value="descending"
+                      id="descending"
+                    />Descending</label>
+
+    </div>
+  </div>
+    </div>
+    </div>
+    <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused" style="display:flex;flex-direction: column;">
+                      <label for="sorttimetaken">Sort For Police Station By Time Taken</label>
+                      <label for="default" class="radio-inline"
+                  required><input
+                      type="radio"
+                      name="sorttimetaken"
+                      value="default"
+                      id="default"
+                      checked
+                      required
+                    />Default</label
+                  >
+                      <label for="more_than_15" class="radio-inline"
+                  required><input
+                      type="radio"
+                      name="sorttimetaken"
+                      value="More Than 15 Minutes"
+                      id="more_than_15"
+                      required
+                    />More Than 15 Minutes</label
+                  >
+                  <label for="minutes15 " class="radio-inline"
+                    ><input 
+                      type="radio"
+                      name="sorttimetaken"
+                      value="15 Minutes"
+                      id="minutes15 "
+                    />15 Minutes</label
+                  >
+                  <label for="minutes10" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="sorttimetaken"
+                      value="10 Minutes"
+                      id="minutes10"
+                    />10 Minutes</label>
+                  <label for="Immediately" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="sorttimetaken"
+                      value="Immediately"
+                      id="descending"
+                    />Immediately</label>
+  </div>
+    </div>
+    <div class="col-lg-6">
+                      <div class="form-group focused" style="display:flex;flex-direction: column;">
+                      <label for="sortdata">Sort For Police Station By Date</label>
+                      <input  class="form-control form-control-alternative"  value="select" name="bydate" type="text"/>
+  </div>
+    </div>
+    </div>
+  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group focused" style="display:flex;flex-direction: column;">
+                        <label class="form-control-label" >Police Station By State</label>
+<select name="state" id="state" class="form-control form-control-alternative">
+  <option>Select</option>
+  <option  value="Vadodara" >Vadodara</option>
+  <option   value="Surat">Surat</option>s
+  <option  value="Ahemdabad">Ahmedabad</option>
+    </select>
+  </div>
+  <input type="submit"  value="Submit"  name="submitdata"/>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </form>
+
+    </div>
+{% endblock %}
+<!-- <?php 
+include("connect.php");
+error_reporting(0);
+
+
+
+if($_POST['submitdata'])
+{
+$sub_policedata=$_POST['sub_police'];
+$statedata=$_POST['state'];
+$sortdata = $_POST['sortdata'];
+$sorttimetaken = $_POST['sorttimetaken'];
+$bydate = $_POST['bydate'];
+echo $sortdata;
+echo $sub_policedata;
+echo $statedata;
+echo $sorttimetaken;
+echo $bydate;
+
+if($statedata!="Select"  && $sub_policedata!="Select"){
+  echo '<script>alert("Select Any One Only....")</script>';
+}else if($sortdata!="default"  && $sorttimetaken!="default"){
+  echo '<script>alert("Select Any One Only....")</script>';
+}
+else if($statedata=="Select" && $sub_policedata!="Select"){
+  if($sortdata=="default" && $sorttimetaken=="default" && $bydate=="select"){
+$query="SELECT * FROM `reportdatabase` WHERE police_station='$sub_policedata'";
+  }
+  else if($sortdata=="ascending" && $sorttimetaken=="default" && $bydate=="select"){
+    echo"2";
+       $query= "SELECT * FROM `reportdatabase` WHERE police_station='$sub_policedata' ORDER BY rating";
+  } else if($sortdata=="descending" && $sorttimetaken=="default" && $bydate=="select" ){
+    $query= "SELECT * FROM `reportdatabase` WHERE police_station='$sub_policedata' ORDER BY rating DESC";
+  }
+  else if($sortdata=="default" && $sorttimetaken=="More Than 15 Minutes" && $bydate=="select" ){
+    $query= "SELECT * FROM `reportdatabase` WHERE police_station='$sub_policedata' AND time_taken='$sorttimetaken'";
+  }
+  else if($sortdata=="default" && $sorttimetaken=="15 Minutes" && $bydate=="select" ){
+      echo"pleae";
+    $query= "SELECT * FROM `reportdatabase` WHERE police_station='$sub_policedata' AND time_taken='$sorttimetaken'";
+  }
+  else if($sortdata=="default" && $sorttimetaken=="10 Minutes"  && $bydate=="select"){
+    $query= "SELECT * FROM `reportdatabase` WHERE police_station='$sub_policedata' AND time_taken='$sorttimetaken'";
+  }
+  else if($sortdata=="default" && $sorttimetaken=="Immediately"&& $bydate=="select" ){
+    $query= "SELECT * FROM `reportdatabase` WHERE police_station='$sub_policedata' AND time_taken='$sorttimetaken'";
+  }
+  else if($sortdata=="default" && $sorttimetaken=="default" && $bydate!="select"){
+    echo "date_selected";
+    $query= "SELECT * FROM `reportdatabase` WHERE police_station='$sub_policedata' AND date='$bydate'";
+  }
+
+} 
+else if($sub_policedata=="Select" && $statedata!="Select" ){
+  echo "ok";
+$query ="SELECT * FROM `reportdatabase` WHERE state='$statedata';";
+// $query ="SELECT * FROM reportdatabase WHERE police_station='$sub_policedata'";
+}
+
+  // $query ="SELECT * FROM REPORTDATBASE WHERE police_station='Fatehgunj'";
+// $query ="SELECT * FROM reportdatabase WHERE district='Vadodara'";
+// $query="SELECT * FROM `reportdatabase` WHERE police_station='$sub_policedata'";
+$data = mysqli_query($conn,$query);
+
+$total=mysqli_num_rows($data);
+if($total!=0 ){
+  ?>
+<br><br>
+<center>
+<table>
+                                <tr id="header">
+                                <th> ID </th>
+                                <th> Name </th>
+                                <th> State </th>
+                                <th> Police Station </th>
+                                <th> How did you come to the police station? </th>
+                                <th>After how much time you were heard in police station?</th>
+                                <th>Phone Number</th>
+                                <th>Rating</th>
+                                <th>Date</th>
+                                
+                                </tr>
+
+
+
+
+<?php
+
+
+   while($result=mysqli_fetch_assoc($data)){
+    
+      echo" <tr >
+             <td>".$result[id]."</td>
+              <td>".$result[name]."</td>
+              <td>".$result[state]."</td>
+              <td>".$result[police_station]."</td>
+              <td>".$result[how_come]."</td>
+              <td>".$result[time_taken]."</td>
+              <td>".$result[number]."</td>
+              <td>".$result[rating]."</td>
+              <td>".$result[date]."</td>"."</tr>"."<tr>";
+              ?>
+              <td colspan="7" class="feedback">
+                <?php
+                 echo "$result[feedback]"."</td></tr>";
+  }
+}
+}
+else {
+    echo "No Records Found";
+}
+?> -->
+
+      
