@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Auth.urls')),
     path('report/', views.reportpage, name="reportpage"),
-    path('generate-qrcode/', views.generateqrcode, name="generateqrcode")
-    
-    
+    path('generate-qrcode/', views.generateqrcode, name="generateqrcode"),
+    path('visual-representation/', views.visualrepresentation, name="visualrepresentation")
+
 ]

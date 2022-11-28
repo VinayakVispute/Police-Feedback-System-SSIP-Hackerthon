@@ -45,3 +45,9 @@ def generateqrcode(request):
         return render(request, "generate_qrcode.html")
     else:
         return redirect('loginpage')
+
+    def visualrepresentation(request):
+        if 'user' in request.session:
+            return render(request, "visualrepresentation.html")
+        else:
+            return redirect('loginpage')
