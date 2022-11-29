@@ -4,7 +4,7 @@
 Under Developemnet ..........
 
 
-For Testing Purposes:
+Login Details for Testing Purposes:
 
 <strong>Email </strong>: test@gmail.com
 </br>
@@ -24,6 +24,9 @@ For Testing Purposes:
 <li> Generating QR Code According to Conditions </li>
 <li> Working on Forget Password and Email Confirmation for Forget Password </li>
 <li> Connecting Sign Up Webpage to our Website and Implemeting Validation on SignUp Page </li>
+<li> Working on QR Code Generator according to Selection </li>
+<li> Implementation of OTP Verification and Feedback Form for Customer</li>
+
 </ul>
 
 
