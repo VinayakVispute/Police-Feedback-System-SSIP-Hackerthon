@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
 body {
-  background-color: #5169a2fd;
-  background-image: url(/static/media/police_background.png);
+  background-color: lightblue;
+ /* background-image: url(/static/media/police_background.png);*/
   /* filter: blur(8px);
     -webkit-filter: blur(8px); */
   /* height: 100px; */
+  
+  background-image: url(/static/media/police_background.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,6 +19,16 @@ body {
   box-sizing: border-box;
 }
 
+.card{
+  border-radius: 10%;
+}
+
+.card-header h3{
+  padding: 15px 0 0 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 .custom-field {
   position: relative;
   font-size: 14px;
@@ -26,7 +38,7 @@ body {
 
 .custom-field input {
   padding: 12px;
-  width: 300px;
+  width: 240px;
   font-size: 14px;
   border-radius: 3px;
   border: 1.5px solid gray;
@@ -50,7 +62,9 @@ body {
   padding: 5px;
   background: white;
 }
-
+.btn{
+  margin-top: 25px;
+}
 .message {
   font-size: 70px;
   font-family: "Ubuntu", sans-serif;
