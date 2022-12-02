@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)k_j6&@a0%i10(s*@^wikst$$x$_t0h*xiiq3a@271t9l29p2t'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,7 +79,7 @@ DATABASES = {
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
         'NAME': '',  
-        'USER': 'root',  
+        'USER': '',  
         'PASSWORD': '',  
         'HOST': '',  
         'PORT': '',  
@@ -134,5 +134,5 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-SESSION_COOKIE_AGE = 100 # set just 10 seconds to test
+SESSION_COOKIE_AGE = 600 # 10 Minutes... Session Time Out
 SESSION_SAVE_EVERY_REQUEST = True
