@@ -74,14 +74,15 @@ WSGI_APPLICATION = 'policefeedbacksystem.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# Here will be your Database (MY SQL Details)
 DATABASES = {
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'policefeedbacksystem',  
+        'NAME': '',  
         'USER': 'root',  
-        'PASSWORD': 'Admin@2022',  
-        'HOST': '127.0.0.1',  
-        'PORT': '3306',  
+        'PASSWORD': '',  
+        'HOST': '',  
+        'PORT': '',  
         'OPTIONS': {  
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
         }  
