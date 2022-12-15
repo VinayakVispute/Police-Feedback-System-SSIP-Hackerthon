@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Feedback Form</title>
+  <link rel="stylesheet" type="text/css" href="/static/style/feedback.css" />
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row col-md-6 col-md-offset-3 " style="
+    width: 100%;
+    margin: 10px;">
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">
+          <h1>Feedback Form - Sayajiganj Police Station</h1>
+        </div>
+        <div class="panel-body">
+          <form action="{% url 'saveData' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" value="{{phone_number}}" class="form-control" id="phone_number" name="phone_number"
+                style="display:none;" />
+            </div>
+            <div class="form-group">
+
+              <input type="text" value="{{state_name}}" class="form-control" id="state_name" name="state_name"
+                style="display:none;" />
+            </div>
+            <div class="form-group">
+              <input type="text" value="{{police_name}}" class="form-control" id="police_station" name="police_station"
+                style="display:none;" />
+            </div>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="how_come">HOW DID YOU COME TO POLICE STATION ?</label>
+              <div>
+                <label for="Through a person known to a police officer" class="radio-inline" required><input
+                    type="radio" name="how_come" value="Through a person known to a police officer"
+                    id="through_a_person_known_to_police" required />Through a person known to a police officer</label>
+                <label for="neighbour" class="radio-inline"><input type="radio" name="how_come"
+                    value="WITH YOUR NEIGHBHOUR/FRIEND/RELATIVE" id="neighbour" />WITH YOUR
+                  NEIGHBHOUR/FRIEND/RELATIVE</label>
+                <label for="own" class="radio-inline"><input type="radio" name="how_come" value="BY OWN" id="own" />On
+                  Your Own</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="time_taken">After how much time you were heard in police station ?</label>
+              <br>
+              <label for="more_than_15" class="radio-inline"><input type="radio" name="time_taken"
+                  value="More Than 15 Minutes" id="moretime" />More Than 15 Minutes</label>
+              <label for="minutesfifteen" class="radio-inline"><input type="radio" name="time_taken" value="15 Minutes"
+                  id="minutesfifteen" />15 Minutes</label>
+              <label for="minutesten" class="radio-inline"><input type="radio" name="time_taken" value="10 Minutes"
+                  id="time_taken" />10 Minutes</label>
+              <label for="immediately" class="radio-inline"><input type="radio" name="time_taken" value="Immediately"
+                  id="immediately" />Immediately</label>
+            </div>
+
+
+            <label for="feedback">Enter Your Feedback.. Here</label>
+            <textarea class="form-control" id="feedback" name="feedback" rows="4" cols="50"
+              required> Enter Your Feedback Here</textarea>
+            <br>
+            <br>
+            <label for="feedback">Enter Rating : </label><br>
+
+            <label>
+              <input type="radio" name="stars" value="1" required />
+              <span class="icon">★</span>
+            </label>
+            <label>
+              <input type="radio" name="stars" value="2" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+            </label>
+            <label>
+              <input type="radio" name="stars" value="3" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+            </label>
+            <label>
+              <input type="radio" name="stars" value="4" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+            </label>
+            <label>
+              <input type="radio" name="stars" value="5" />
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+              <span class="icon">★</span>
+            </label>
+        </div>
+        <input type="submit" class="btn btn-primary" name="submitdata" />
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

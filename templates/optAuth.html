@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Number verification with OTP</title>
+  <style>
+    /* body {
+  background-image: url('/static/police.jpg');
+} */
+    .container {
+      width: 302px;
+      height: 175px;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      margin: auto;
+    }
+
+    #number,
+    #verificationcode {
+      width: calc(100% - 24px);
+      padding: 10px;
+      font-size: 20px;
+      margin-bottom: 5px;
+      outline: none;
+    }
+
+    #recaptcha-container {
+      margin-bottom: 5px;
+    }
+
+    #send,
+    #verify {
+      width: 100%;
+      height: 40px;
+      outline: none;
+    }
+
+    .p-conf,
+    .n-conf {
+      width: calc(100% - 22px);
+      border: 2px solid green;
+      border-radius: 4px;
+      padding: 8px 10px;
+      margin: 4px 0px;
+      background-color: rgba(0, 249, 12, 0.5);
+      display: none;
+    }
+
+    .n-conf {
+      border-color: red;
+      background-color: rgba(255, 0, 4, 0.5);
+    }
+  </style>
+  <link rel="stylesheet" href="/static/style/optAuth.css" />
+</head>
+
+<body>
+  <div class="bg-image"></div>
+
+  <div class="container">
+    <div id="sender">
+      <form method="post">
+        {% csrf_token %}
+        <input type="text" id="number" name="number" placeholder="+91 000 000 0000" />
+        <div id="recaptcha-container"></div>
+        <input type="button" id="send" value="Send" onClick="phoneAuth()" />
+    </div>
+    <div id="verifier" style="display: none">
+      <input type="text" id="verificationcode" placeholder="OTP Code" />
+      <input type="submit" id="verify" value="Verify" onClick="codeverify()" />
+      <div class="p-conf">Number Verified</div>
+      <div class="n-conf">OTP ERROR</div>
+    </div>
+    </form>
+
+  </div>
+
+  <!--	add firebase SDK-->
+
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+  <script src="/static/script/optAuth.js"></script>
+
+
+</body>
+
+</html>

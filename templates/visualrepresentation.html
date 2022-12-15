@@ -1,30 +1,200 @@
 {% extends 'base.html' %}
 {% block title %}
-Visual-Overviews
+Visual Representation
 {% endblock %}
+{% block style %}
+.alert {
+padding: 20px;
+background-color: #f44336;
+color: white;
+opacity: 1;
+transition: opacity 0.6s;
+margin-bottom: 15px;
+}
 
-{% block script %}
+.alert.success {
+background-color: #04aa6d;
+}
+
+.alert.info {
+background-color: #2196f3;
+}
+
+.alert.warning {
+background-color: #ff9800;
+}
+
+.closebtn {
+margin-left: 15px;
+color: white;
+font-weight: bold;
+float: right;
+font-size: 22px;
+line-height: 20px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.closebtn:hover {
+color: black;
+}
+{% endblock %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert {{ message.tags }}">
+  <span class="closebtn">&times;</span>
+  <strong>Message!</strong> {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+<input type="hidden" id="actualDate" name="actualDate" />
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+  style="min-height: 600px; background-image: url('police.png'); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-default opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 style="
+        color: white;
+        font-size: 70px;
+    ">Visual Representation </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--7" style="
+        margin-bottom: 100px;
+    ">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile shadow">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 order-lg-2">
+            <div class="card-profile-image">
+              <a href="#">
+                <img src="/static/media/police.jpg" class="rounded-circle">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+          <div class="d-flex justify-content-between">
+            <!-- <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
+                    <a href="#" class="btn btn-sm btn-default float-right">Message</a> -->
+          </div>
+        </div>
+        <div class="card-body pt-0 pt-md-4">
+          <div class="row">
+            <div class="col">
+              <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <h3>
+              Admin<span class="font-weight-light"></span>
+            </h3>
+            <div class="h5 font-weight-300">
+              <i class="ni location_pin mr-2"></i>VADODARA
+            </div>
+            <div class="h5 mt-4">
+              <i class="ni business_briefcase-24 mr-2"></i>GOVERNMENT OFFICER
+            </div>
+            <!-- <div>
+                      <i class="ni education_hat mr-2"></i>University of Computer Science
+                    </div> -->
+            <hr class="my-4">
+            <!-- <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">Select Details For Graphihcal Representation</h3>
+            </div>
+            <div class="col-4 text-right">
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group focused" style="display:flex;flex-direction: column;">
+                  <label class="form-control-label">By Police Station</label>
+                  <select name="sub_police" id="sub_police" class="form-control form-control-alternative">
+                    <option value="None">--Select Police Station--</option>
+                    {% for item in policeStationWiseData %}
+                    <option value="{{ item.police_station }}">{{ item.police_station }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group focused" style="display:flex;flex-direction: column;">
+                  <label class="form-control-label">Acccording to State Wise</label>
+                  <select name="state" id="state" class="form-control form-control-alternative">
+                    <option value="None">--Select State--</option>
+                    {% for item in stateWiseData %}
+                    <option value="{{ item.state }}">{{ item.state }}</option>
+                    {% endfor %}
+                  </select>
+
+
+                </div>
+              </div>
+
+            </div>
+            <input type="submit" value="Submit" name="submitdata" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </form>
+
+</div>
+<div class="col-xl-8 order-xl-1">
+  {% if allowed == "yes" %}
+  <div style="width:900px;">
+    <h3 align="center">District Wise Precentages of Entry</h3>
+    <br />
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </div>
+  {% endif %}
+</div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-           google.charts.load('current', {'packages':['corechart']});
-           google.charts.setOnLoadCallback(drawChart);
-           function drawChart()
-           {
-                var data = google.visualization.arrayToDataTable([
-                          ['police_station', 'Number'],
-                          <?php
-                          while($row = mysqli_fetch_array($result))
-                          {
-                               echo "['".$row["police_station"]."', ".$row["number"]."],";
-                          }
-                          ?>
-                     ]);
-                var options = {
-                      title: 'District Wise Entry Represntation',
-                      //is3D:true,
-                      pieHole: 0.4
-                     };
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-                chart.draw(data, options);
-           }
-           </script>
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['police_station', 'Number'],
+      {% for x in visualRepresentationQuery %}
+  ['{{ x.Iteam }}', {{ x.number }}],
+    {% endfor %}                       
+               ]);
+  var options = {
+    title: 'District Wise Entry Represntation',
+    //is3D:true,  
+    pieHole: 0.4
+  };
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);  
+     }  
+</script>
+{% for x in visualRepresentationQuery %}
+['{{ x.Iteam }}',{{ x.number }}],
+{% endfor %}
 {% endblock %}

@@ -22,6 +22,8 @@ urlpatterns = [
     path('', include('Auth.urls')),
     path('report/', views.reportpage, name="reportpage"),
     path('generate-qrcode/', views.generateqrcode, name="generateqrcode"),
-    path('visual-representation/', views.visualrepresentation, name="visualrepresentation")
+    path('visual-representation/', views.visualrepresentation, name="visualrepresentation"),
+    path('feedback-form/<slug:name>',views.feedback_form),
+    path('saveData/',views.saveData,name="saveData")
 
 ]
