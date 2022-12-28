@@ -1,0 +1,43 @@
+[1mdiff --git a/Auth/__pycache__/admin.cpython-310.pyc b/Auth/__pycache__/admin.cpython-310.pyc[m
+[1mindex e604211..f577b14 100644[m
+Binary files a/Auth/__pycache__/admin.cpython-310.pyc and b/Auth/__pycache__/admin.cpython-310.pyc differ
+[1mdiff --git a/Auth/__pycache__/urls.cpython-310.pyc b/Auth/__pycache__/urls.cpython-310.pyc[m
+[1mindex 6ffa437..81389c4 100644[m
+Binary files a/Auth/__pycache__/urls.cpython-310.pyc and b/Auth/__pycache__/urls.cpython-310.pyc differ
+[1mdiff --git a/Auth/__pycache__/views.cpython-310.pyc b/Auth/__pycache__/views.cpython-310.pyc[m
+[1mindex c13c645..189dea8 100644[m
+Binary files a/Auth/__pycache__/views.cpython-310.pyc and b/Auth/__pycache__/views.cpython-310.pyc differ
+[1mdiff --git a/databaseReport/__pycache__/__init__.cpython-310.pyc b/databaseReport/__pycache__/__init__.cpython-310.pyc[m
+[1mindex 0c79eb2..7adaaa4 100644[m
+Binary files a/databaseReport/__pycache__/__init__.cpython-310.pyc and b/databaseReport/__pycache__/__init__.cpython-310.pyc differ
+[1mdiff --git a/databaseReport/__pycache__/admin.cpython-310.pyc b/databaseReport/__pycache__/admin.cpython-310.pyc[m
+[1mindex 357cf64..8f32bf7 100644[m
+Binary files a/databaseReport/__pycache__/admin.cpython-310.pyc and b/databaseReport/__pycache__/admin.cpython-310.pyc differ
+[1mdiff --git a/databaseReport/__pycache__/apps.cpython-310.pyc b/databaseReport/__pycache__/apps.cpython-310.pyc[m
+[1mindex 3af51ca..e310f55 100644[m
+Binary files a/databaseReport/__pycache__/apps.cpython-310.pyc and b/databaseReport/__pycache__/apps.cpython-310.pyc differ
+[1mdiff --git a/databaseReport/__pycache__/models.cpython-310.pyc b/databaseReport/__pycache__/models.cpython-310.pyc[m
+[1mindex f062435..448e243 100644[m
+Binary files a/databaseReport/__pycache__/models.cpython-310.pyc and b/databaseReport/__pycache__/models.cpython-310.pyc differ
+[1mdiff --git a/databaseReport/migrations/__pycache__/0001_initial.cpython-310.pyc b/databaseReport/migrations/__pycache__/0001_initial.cpython-310.pyc[m
+[1mindex e4c218a..88637a0 100644[m
+Binary files a/databaseReport/migrations/__pycache__/0001_initial.cpython-310.pyc and b/databaseReport/migrations/__pycache__/0001_initial.cpython-310.pyc differ
+[1mdiff --git a/databaseReport/migrations/__pycache__/0002_statewisepolicestation.cpython-310.pyc b/databaseReport/migrations/__pycache__/0002_statewisepolicestation.cpython-310.pyc[m
+[1mindex 8194427..fff5d9d 100644[m
+Binary files a/databaseReport/migrations/__pycache__/0002_statewisepolicestation.cpython-310.pyc and b/databaseReport/migrations/__pycache__/0002_statewisepolicestation.cpython-310.pyc differ
+[1mdiff --git a/databaseReport/migrations/__pycache__/0003_statewisepolicestation_qr_code.cpython-310.pyc b/databaseReport/migrations/__pycache__/0003_statewisepolicestation_qr_code.cpython-310.pyc[m
+[1mindex 5552fa7..b388eb8 100644[m
+Binary files a/databaseReport/migrations/__pycache__/0003_statewisepolicestation_qr_code.cpython-310.pyc and b/databaseReport/migrations/__pycache__/0003_statewisepolicestation_qr_code.cpython-310.pyc differ
+[1mdiff --git a/databaseReport/migrations/__pycache__/__init__.cpython-310.pyc b/databaseReport/migrations/__pycache__/__init__.cpython-310.pyc[m
+[1mindex 94459df..691063d 100644[m
+Binary files a/databaseReport/migrations/__pycache__/__init__.cpython-310.pyc and b/databaseReport/migrations/__pycache__/__init__.cpython-310.pyc differ
+[1mdiff --git a/db.sqlite3 b/db.sqlite3[m
+[1mdeleted file mode 100644[m
+[1mindex 91857cb..0000000[m
+Binary files a/db.sqlite3 and /dev/null differ
+[1mdiff --git a/policefeedbacksystem/__pycache__/settings.cpython-310.pyc b/policefeedbacksystem/__pycache__/settings.cpython-310.pyc[m
+[1mindex 4cb0e2c..46f6491 100644[m
+Binary files a/policefeedbacksystem/__pycache__/settings.cpython-310.pyc and b/policefeedbacksystem/__pycache__/settings.cpython-310.pyc differ
+[1mdiff --git a/policefeedbacksystem/__pycache__/urls.cpython-310.pyc b/policefeedbacksystem/__pycache__/urls.cpython-310.pyc[m
+[1mindex 031fba8..749030b 100644[m
+Binary files a/policefeedbacksys
